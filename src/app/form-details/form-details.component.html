@@ -14,10 +14,10 @@
             <td>{{pd.cardNumber}}</td>
             <td>{{pd.expirationDate}}</td>
             <td>
-                <i class="fa fa-trash" (click)="onDelete(pd.id)" style="font-size: 20px; color:red;"></i>
+                <i type="button" class="fa fa-trash" (click)="onDelete(pd.id)"  style="font-size: 20px; color:red;"></i>
             </td>
             <td>
-                <i class="fa fa-edit px-3" (click)="populateForm(pd)" style="font-size: 20px; color:rgb(37, 98, 185);"></i>
+                <i type="button" class="fa fa-edit px-3" (click)="populateForm(pd)" data-toggle="button" style="font-size: 20px; color:rgb(37, 98, 185);"></i>
             </td>
         </tr>
     </table>
