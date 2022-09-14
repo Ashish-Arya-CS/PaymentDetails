@@ -4,7 +4,7 @@
         <label>CARD OWNER NAME</label>
         <input class="form-control form-control-lg" placeholder="Full Name" name="cardOwnerName"
             #cardOwnerName="ngModel" [(ngModel)]="service.formData.cardOwnerName"
-            required maxlength="30" [class.invalid]="cardOwnerName.invalid &#038;&#038; cardOwnerName.touched">
+            required pattern="^[A-Z][a-z]{2,}(\s[A-Z][a-z]{2,})*$" maxlength="30" [class.invalid]="cardOwnerName.invalid &#038;&#038; cardOwnerName.touched">
             <small class="text-danger" 
                     *ngIf="!cardOwnerName?.valid && !cardOwnerName?.touched">
                 Please Enter a Valid Name
