@@ -15,6 +15,7 @@ ngForm: any;
   constructor(public service: PaymentDetailService) { }
 
   ngOnInit():void {
+    this.service.refreshList();
   }
 
   resetForm(form: NgForm) {
@@ -22,7 +23,22 @@ ngForm: any;
     this.service.formData = new PaymentDetail();
   }
   onSubmit(form: NgForm) {
-    this.insertRecord(form);
+    if (this.service.formData.id == 0)
+      this.insertRecord(form);
+    else
+      this.updateRecord(form);
+  }
+  
+  updateRecord(form: NgForm) {
+    this.service.putPaymentDetail().subscribe(
+      res => {
+        this.resetForm(form);
+        this.service.refreshList();
+      },
+      err => {
+        console.log(err);
+      }
+    )
   }
   
   insertRecord(form: NgForm) {

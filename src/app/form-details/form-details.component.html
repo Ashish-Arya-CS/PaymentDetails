@@ -1,0 +1,24 @@
+<div style="float: left; padding: 10px 10px 10px 10px; margin: 10px,5px; width: 45%;">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>Card Owner</th>
+                <th>Card Number</th>
+                <th>Exp.</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tr *ngFor="let pd of service.list">
+            <td>{{pd.cardOwnerName}}</td>
+            <td>{{pd.cardNumber}}</td>
+            <td>{{pd.expirationDate}}</td>
+            <td>
+                <i class="fa fa-trash" (click)="onDelete(pd.id)" style="font-size: 20px; color:red;"></i>
+            </td>
+            <td>
+                <i class="fa fa-edit px-3" (click)="populateForm(pd)" style="font-size: 20px; color:rgb(37, 98, 185);"></i>
+            </td>
+        </tr>
+    </table>
+</div>
