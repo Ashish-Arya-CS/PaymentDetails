@@ -26,11 +26,9 @@ ngForm: any;
   }
   onSubmit(form: NgForm) {
     if (this.service.formData.id == 0){
-      this.insertRecord(form);
-      alert("Data Inserted Successfully!")}
+      this.insertRecord(form);}
     else{
-      this.updateRecord(form);
-      alert("Data Updated Successfully!")}
+      this.updateRecord(form);}
   }
   
   updateRecord(form: NgForm) {
