@@ -48,7 +48,7 @@ ngForm: any;
     this.service.postPaymentDetail().subscribe(
       res => {
         this.resetForm(form);
-        this.alertupdate = true;
+        this.altersubmit = true;
         this.service.refreshList();
       },
       err => { console.log(err); }
