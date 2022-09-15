@@ -1,3 +1,10 @@
+<div>
+    <div *ngIf="alert_delete"   class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Congrats !</strong> Deletion successful. 
+        <button (click) = "close_alert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
     <table class="table">
         <thead class="thead-light">
@@ -21,3 +28,5 @@
             </td>
         </tr>
     </table>
+
+</div>

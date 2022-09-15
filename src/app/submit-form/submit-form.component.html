@@ -1,3 +1,19 @@
+<div>
+    <div *ngIf="alertupdate"   class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> Bank Card Details updated successfully.
+        <button (click) = "close_alert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div *ngIf="altersubmit"   class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Congrats !</strong> Bank Card Details submitted successfully.
+        <button (click) = "close_alert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
 <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
     <input type="hidden" name="id" [value]="service.formData.id" />
     <div class="form-group">
@@ -46,3 +62,5 @@
         <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
     </div>
 </form>
+
+</div>

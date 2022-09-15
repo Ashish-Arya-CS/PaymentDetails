@@ -10,6 +10,8 @@ import { NgForm } from '@angular/forms';
 })
 
 export class SubmitFormComponent implements OnInit {
+  alertupdate:boolean = false;
+  altersubmit:boolean = false;
 ngForm: any;
 
   constructor(public service: PaymentDetailService) { }
@@ -33,6 +35,7 @@ ngForm: any;
     this.service.putPaymentDetail().subscribe(
       res => {
         this.resetForm(form);
+        this.alertupdate = true;
         this.service.refreshList();
       },
       err => {
@@ -45,9 +48,15 @@ ngForm: any;
     this.service.postPaymentDetail().subscribe(
       res => {
         this.resetForm(form);
+        this.alertupdate = true;
         this.service.refreshList();
       },
       err => { console.log(err); }
     )
+  }
+
+  close_alert(){
+    this.alertupdate = false;
+    this.altersubmit = false;
   }
 }
