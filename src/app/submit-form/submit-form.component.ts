@@ -23,10 +23,12 @@ ngForm: any;
     this.service.formData = new PaymentDetail();
   }
   onSubmit(form: NgForm) {
-    if (this.service.formData.id == 0)
+    if (this.service.formData.id == 0){
       this.insertRecord(form);
-    else
+      alert("Data Inserted Successfully!")}
+    else{
       this.updateRecord(form);
+      alert("Data Updated Successfully!")}
   }
   
   updateRecord(form: NgForm) {
