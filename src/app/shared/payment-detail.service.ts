@@ -8,23 +8,23 @@ import { HttpClient } from "@angular/common/http";
 export class PaymentDetailService {
 
   formData: PaymentDetail= new PaymentDetail();
-  readonly baseURL = 'http://localhost:3000/PaymentDetail';
+  url : string = 'http://localhost:3000/PaymentDetail';
   list!: PaymentDetail[];
 
   constructor(private http: HttpClient) { }
 
   postPaymentDetail() {
-    return this.http.post(this.baseURL, this.formData);
+    return this.http.post(this.url, this.formData);
   }
   putPaymentDetail() {
-    return this.http.put(`${this.baseURL}/${this.formData.id}`, this.formData);
+    return this.http.put(`${this.url}/${this.formData.id}`, this.formData);
   }
   deletePaymentDetail(id: number) {
-    return this.http.delete(`${this.baseURL}/${id}`);
+    return this.http.delete(`${this.url}/${id}`);
   }
 
   refreshList() {
-    this.http.get(this.baseURL)
+    this.http.get(this.url)
       .toPromise()
       .then(res =>this.list = res as PaymentDetail[]);
   }

@@ -1,25 +1,11 @@
 {
   "PaymentDetail": [
     {
-      "id": 1,
-      "cardOwnerName": "Leame Graham",
-      "cardNumber": "1234567890123456",
-      "expirationDate": "12/28",
-      "securityCode": "345"
-    },
-    {
       "id": 2,
-      "cardOwnerName": "Ashish Arya",
-      "cardNumber": "9123456780123456",
-      "expirationDate": "02/23",
+      "cardOwnerName": "Khushwant Parihar",
+      "cardNumber": "9123456789123536",
+      "expirationDate": "02/28",
       "securityCode": "123"
-    },
-    {
-      "id": 3,
-      "cardOwnerName": "Leasly Knight",
-      "cardNumber": "5678392018364234",
-      "expirationDate": "12/29",
-      "securityCode": "324"
     }
   ]
 }

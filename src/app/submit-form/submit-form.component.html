@@ -20,9 +20,9 @@
         <label>CARD OWNER NAME</label>
         <input class="form-control form-control-lg" placeholder="Full Name" name="cardOwnerName"
             #cardOwnerName="ngModel" [(ngModel)]="service.formData.cardOwnerName"
-            required pattern="^[A-Z][a-z]{2,}(\s[A-Z][a-z]{2,})*$" maxlength="30" [class.invalid]="cardOwnerName.invalid &#038;&#038; cardOwnerName.touched">
+            required pattern="^[A-Z]{1}[a-z]{2,15} [A-Z]{1}[a-z]{2,15}$" maxlength="30" [class.invalid]="cardOwnerName.touched">
             <small class="text-danger" 
-                    *ngIf="!cardOwnerName?.valid && !cardOwnerName?.touched">
+                    *ngIf="!cardOwnerName?.valid && cardOwnerName?.touched">
                 Please Enter a Valid Name
                 </small>
     </div>
@@ -30,9 +30,9 @@
         <label>CARD NUMBER</label>
         <input class="form-control form-control-lg" placeholder="16 Digit Card Number" name="cardNumber"
             #cardNumber="ngModel" [(ngModel)]="service.formData.cardNumber"
-            required maxlength="16" minlength="16" [class.invalid]="cardNumber.invalid &#038;&#038; cardNumber.touched">
+            required pattern="^[1-9]{1}[0-9]{2,16}$" maxlength="16" minlength="16" [class.invalid]="cardNumber.touched">
             <small class="text-danger" 
-            *ngIf="!cardNumber?.valid && !cardNumber?.touched">
+            *ngIf="!cardNumber?.valid && cardNumber?.touched">
         Please Enter a Valid Card Number
         </small>
         </div>
@@ -41,9 +41,9 @@
             <label>SECURITY CODE</label>
             <input type="password" class="form-control form-control-lg" placeholder="Security Code" name="securityCode"
                 #securityCode="ngModel" [(ngModel)]="service.formData.securityCode"
-                required maxlength="3" minlength="3" [class.invalid]="securityCode.invalid &#038;&#038; securityCode.touched">
+                required pattern="^[0-9]{3}$" maxlength="3" minlength="3" [class.invalid]="securityCode.touched">
                 <small class="text-danger" 
-                *ngIf="!securityCode?.valid && !securityCode?.touched">
+                *ngIf="!securityCode?.valid && securityCode?.touched">
             Please Enter a Valid Security Code
             </small>
             </div>
@@ -51,9 +51,9 @@
             <label>VALIDE THROUGH</label>
             <input class="form-control form-control-lg" placeholder="MM/YY" name="expirationDate"
                 #expirationDate="ngModel" [(ngModel)]="service.formData.expirationDate"
-                required maxlength="5" minlength="5" [class.invalid]="expirationDate.invalid &#038;&#038; expirationDate.touched">
+                required pattern = "^(0[1-9]|1[0-2])/?([0-9]{2})$"maxlength="5" minlength="5" [class.invalid]=" expirationDate.touched">
                 <small class="text-danger" 
-                *ngIf="!expirationDate?.valid && !expirationDate?.touched">
+                *ngIf="!expirationDate?.valid && expirationDate?.touched">
             Please Enter a Valid Data
             </small>
             </div>
